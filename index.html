@@ -139,95 +139,217 @@
         </div>
     </div>
 
-    <div id="view-profile" class="fixed inset-0 bg-white hidden z-50 overflow-y-auto p-6">
-        <h2 class="text-2xl font-bold mb-2 text-gray-800">Seu perfil de adoção</h2>
-        <p class="text-gray-500 mb-6">Isso ajuda a encontrar o pet ideal para você</p>
+    <div id="view-profile" class="fixed inset-0 bg-white hidden z-50 flex-col overflow-hidden">
+        <div class="bg-white/80 backdrop-blur-md z-10 px-6 py-5 border-b border-gray-100 shadow-sm flex-shrink-0">
+            <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                <i class="ph-fill ph-magic-wand text-orange-500"></i> Seu Perfil
+            </h2>
+            <p class="text-gray-500 text-sm mt-1">Responda para o match perfeito!</p>
+        </div>
 
-        <label class="font-semibold text-gray-700">Tipo de moradia</label>
-        <select id="p-housing" class="mb-4 p-3 border border-gray-200 rounded-xl w-full bg-gray-50">
-            <option value="">Selecione</option>
-            <option value="casa">Casa</option>
-            <option value="apartamento">Apartamento</option>
-            <option value="casa_quintal">Casa com quintal</option>
-        </select>
+        <div class="flex-1 overflow-y-auto p-6 space-y-10 pb-32 no-scrollbar">
+            
+            <div class="space-y-6">
+                <div class="flex items-center gap-3 border-b border-gray-100 pb-2">
+                    <span class="bg-orange-100 text-orange-600 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">1</span>
+                    <h3 class="text-lg font-bold text-gray-800">O Pet Ideal</h3>
+                </div>
 
-        <label class="font-semibold text-gray-700">Nível de atividade</label>
-        <select id="p-activity" class="mb-4 p-3 border border-gray-200 rounded-xl w-full bg-gray-50">
-            <option value="">Selecione</option>
-            <option value="sedentario">Sedentário</option>
-            <option value="moderado">Moderado</option>
-            <option value="ativo">Ativo</option>
-        </select>
+                <div>
+                    <label class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3 block">Espécie Preferida</label>
+                    <div class="grid grid-cols-3 gap-3">
+                        <label class="cursor-pointer">
+                            <input type="radio" name="p-species" value="cão" class="peer hidden">
+                            <div class="h-24 p-2 border-2 border-gray-100 rounded-2xl flex flex-col items-center justify-center gap-2 peer-checked:border-orange-500 peer-checked:bg-orange-50 peer-checked:text-orange-600 text-gray-400 hover:bg-gray-50 transition-all">
+                                <i class="ph-fill ph-dog text-3xl"></i>
+                                <span class="text-xs font-bold text-center">Cachorro</span>
+                            </div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="p-species" value="gato" class="peer hidden">
+                            <div class="h-24 p-2 border-2 border-gray-100 rounded-2xl flex flex-col items-center justify-center gap-2 peer-checked:border-orange-500 peer-checked:bg-orange-50 peer-checked:text-orange-600 text-gray-400 hover:bg-gray-50 transition-all">
+                                <i class="ph-fill ph-cat text-3xl"></i>
+                                <span class="text-xs font-bold text-center">Gato</span>
+                            </div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="p-species" value="" class="peer hidden" checked>
+                            <div class="h-24 p-2 border-2 border-gray-100 rounded-2xl flex flex-col items-center justify-center gap-2 peer-checked:border-orange-500 peer-checked:bg-orange-50 peer-checked:text-orange-600 text-gray-400 hover:bg-gray-50 transition-all">
+                                <i class="ph-fill ph-paw-print text-3xl"></i>
+                                <span class="text-xs font-bold text-center">Ambos</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
 
-        <label class="font-semibold text-gray-700">Idade do pet</label>
-        <select id="p-age" class="mb-4 p-3 border border-gray-200 rounded-xl w-full bg-gray-50">
-            <option value="">Todos</option>
-            <option value="filhote">Filhote</option>
-            <option value="adulto">Adulto</option>
-            <option value="idoso">Idoso</option>
-        </select>
+                <div>
+                    <label class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3 block">Porte do Pet</label>
+                    <div class="grid grid-cols-4 gap-2">
+                        <label class="cursor-pointer">
+                            <input type="radio" name="p-size" value="" class="peer hidden" checked>
+                            <div class="p-3 border-2 border-gray-100 rounded-xl flex justify-center items-center peer-checked:border-orange-500 peer-checked:bg-orange-50 peer-checked:text-orange-600 text-gray-400 transition-all text-xs font-bold">Todos</div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="p-size" value="pequeno" class="peer hidden">
+                            <div class="p-3 border-2 border-gray-100 rounded-xl flex justify-center items-center peer-checked:border-orange-500 peer-checked:bg-orange-50 peer-checked:text-orange-600 text-gray-400 transition-all text-xs font-bold">Pequeno</div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="p-size" value="médio" class="peer hidden">
+                            <div class="p-3 border-2 border-gray-100 rounded-xl flex justify-center items-center peer-checked:border-orange-500 peer-checked:bg-orange-50 peer-checked:text-orange-600 text-gray-400 transition-all text-xs font-bold">Médio</div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="p-size" value="grande" class="peer hidden">
+                            <div class="p-3 border-2 border-gray-100 rounded-xl flex justify-center items-center peer-checked:border-orange-500 peer-checked:bg-orange-50 peer-checked:text-orange-600 text-gray-400 transition-all text-xs font-bold">Grande</div>
+                        </label>
+                    </div>
+                </div>
 
-        <label class="font-semibold text-gray-700">Temperamento desejado</label>
-        <select id="p-temperament" class="mb-4 p-3 border border-gray-200 rounded-xl w-full bg-gray-50">
-            <option value="">Todos</option>
-            <option value="calmo">Calmo</option>
-            <option value="brincalhao">Brincalhão</option>
-            <option value="independente">Independente</option>
-        </select>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3 block">Idade</label>
+                        <select id="p-age" class="w-full p-3 border-2 border-gray-100 rounded-xl bg-white text-gray-700 font-medium focus:outline-none focus:border-orange-500">
+                            <option value="">Qualquer Idade</option>
+                            <option value="filhote">Filhote</option>
+                            <option value="adulto">Adulto</option>
+                            <option value="idoso">Idoso</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3 block">Temperamento</label>
+                        <select id="p-temperament" class="w-full p-3 border-2 border-gray-100 rounded-xl bg-white text-gray-700 font-medium focus:outline-none focus:border-orange-500">
+                            <option value="">Qualquer um</option>
+                            <option value="calmo">Calmo</option>
+                            <option value="brincalhao">Brincalhão</option>
+                            <option value="independente">Independente</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
 
-        <label class="font-semibold text-gray-700">Rotina</label>
-        <select id="p-routine" class="mb-4 p-3 border border-gray-200 rounded-xl w-full bg-gray-50">
-            <option value="">Selecione</option>
-            <option value="fica_em_casa">Fico muito em casa</option>
-            <option value="trabalho_fora">Trabalho fora</option>
-            <option value="home_office">Home office</option>
-            <option value="viajo_frequente">Viajo frequentemente</option>
-        </select>
+            <div class="space-y-6">
+                <div class="flex items-center gap-3 border-b border-gray-100 pb-2">
+                    <span class="bg-blue-100 text-blue-600 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">2</span>
+                    <h3 class="text-lg font-bold text-gray-800">Seu Estilo de Vida</h3>
+                </div>
 
-        <label class="font-semibold text-gray-700">Experiência com pets</label>
-        <select id="p-experience" class="mb-4 p-3 border border-gray-200 rounded-xl w-full bg-gray-50">
-            <option value="">Selecione</option>
-            <option value="iniciante">Iniciante</option>
-            <option value="intermediario">Intermediário</option>
-            <option value="experiente">Experiente</option>
-        </select>
+                <div>
+                    <label class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3 block">Tipo de Moradia</label>
+                    <div class="grid grid-cols-3 gap-3">
+                        <label class="cursor-pointer">
+                            <input type="radio" name="p-housing" value="apartamento" class="peer hidden">
+                            <div class="h-24 p-2 border-2 border-gray-100 rounded-2xl flex flex-col items-center justify-center gap-2 peer-checked:border-blue-500 peer-checked:bg-blue-50 peer-checked:text-blue-600 text-gray-400 hover:bg-gray-50 transition-all">
+                                <i class="ph-fill ph-buildings text-3xl"></i>
+                                <span class="text-xs font-bold text-center">Apê</span>
+                            </div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="p-housing" value="casa" class="peer hidden" checked>
+                            <div class="h-24 p-2 border-2 border-gray-100 rounded-2xl flex flex-col items-center justify-center gap-2 peer-checked:border-blue-500 peer-checked:bg-blue-50 peer-checked:text-blue-600 text-gray-400 hover:bg-gray-50 transition-all">
+                                <i class="ph-fill ph-house-line text-3xl"></i>
+                                <span class="text-xs font-bold text-center">Casa</span>
+                            </div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="p-housing" value="casa_quintal" class="peer hidden">
+                            <div class="h-24 p-2 border-2 border-gray-100 rounded-2xl flex flex-col items-center justify-center gap-2 peer-checked:border-blue-500 peer-checked:bg-blue-50 peer-checked:text-blue-600 text-gray-400 hover:bg-gray-50 transition-all">
+                                <i class="ph-fill ph-tree text-3xl"></i>
+                                <span class="text-xs font-bold text-center">Quintal</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
 
-        <label class="font-semibold text-gray-700">Espécie preferida</label>
-        <select id="p-species" class="mb-4 p-3 border border-gray-200 rounded-xl w-full bg-gray-50">
-            <option value="">Todos</option>
-            <option value="cão">Cachorro</option>
-            <option value="gato">Gato</option>
-        </select>
+                <div>
+                    <label class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3 block">Nível de Atividade</label>
+                    <div class="grid grid-cols-3 gap-2">
+                        <label class="cursor-pointer">
+                            <input type="radio" name="p-activity" value="sedentario" class="peer hidden">
+                            <div class="p-3 border-2 border-gray-100 rounded-xl flex flex-col items-center gap-1 peer-checked:border-blue-500 peer-checked:bg-blue-50 peer-checked:text-blue-600 text-gray-400 transition-all">
+                                <i class="ph-fill ph-armchair text-xl"></i>
+                                <span class="text-[10px] uppercase font-bold">Tranquilo</span>
+                            </div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="p-activity" value="moderado" class="peer hidden" checked>
+                            <div class="p-3 border-2 border-gray-100 rounded-xl flex flex-col items-center gap-1 peer-checked:border-blue-500 peer-checked:bg-blue-50 peer-checked:text-blue-600 text-gray-400 transition-all">
+                                <i class="ph-fill ph-person-simple-walk text-xl"></i>
+                                <span class="text-[10px] uppercase font-bold">Moderado</span>
+                            </div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="p-activity" value="ativo" class="peer hidden">
+                            <div class="p-3 border-2 border-gray-100 rounded-xl flex flex-col items-center gap-1 peer-checked:border-blue-500 peer-checked:bg-blue-50 peer-checked:text-blue-600 text-gray-400 transition-all">
+                                <i class="ph-fill ph-sneaker text-xl"></i>
+                                <span class="text-[10px] uppercase font-bold">Ativo</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
 
-        <label class="font-semibold text-gray-700">Porte</label>
-        <select id="p-size" class="mb-6 p-3 border border-gray-200 rounded-xl w-full bg-gray-50">
-            <option value="">Todos</option>
-            <option value="pequeno">Pequeno</option>
-            <option value="médio">Médio</option>
-            <option value="grande">Grande</option>
-        </select>
+                <div>
+                    <label class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3 block">Rotina Diária</label>
+                    <select id="p-routine" class="w-full p-3 border-2 border-gray-100 rounded-xl bg-white text-gray-700 font-medium focus:outline-none focus:border-blue-500">
+                        <option value="fica_em_casa">Fico muito em casa / Home Office</option>
+                        <option value="trabalho_fora">Trabalho fora o dia todo</option>
+                        <option value="viajo_frequente">Viajo frequentemente</option>
+                    </select>
+                </div>
+            </div>
 
-        <label class="font-semibold text-gray-700">Tem alergia?</label>
-        <select id="p-allergy" class="mb-4 p-3 border border-gray-200 rounded-xl w-full bg-gray-50">
-            <option value="">Não</option>
-            <option value="sim">Sim</option>
-        </select>
+            <div class="space-y-6">
+                <div class="flex items-center gap-3 border-b border-gray-100 pb-2">
+                    <span class="bg-green-100 text-green-600 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">3</span>
+                    <h3 class="text-lg font-bold text-gray-800">Convivência</h3>
+                </div>
 
-        <label class="font-semibold text-gray-700">Tem crianças?</label>
-        <select id="p-kids" class="mb-4 p-3 border border-gray-200 rounded-xl w-full bg-gray-50">
-            <option value="">Não</option>
-            <option value="sim">Sim</option>
-        </select>
+                <div class="bg-gray-50 p-4 rounded-2xl border border-gray-100 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2 text-gray-700 font-medium">
+                            <i class="ph-fill ph-baby text-xl text-gray-400"></i> Tem crianças em casa?
+                        </div>
+                        <div class="relative inline-block w-12 align-middle select-none transition duration-200 ease-in">
+                            <input type="checkbox" id="p-kids" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer transition-transform"/>
+                            <label for="p-kids" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                        </div>
+                    </div>
+                    <hr class="border-gray-200">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2 text-gray-700 font-medium">
+                            <i class="ph-fill ph-paw-print text-xl text-gray-400"></i> Já possui outros pets?
+                        </div>
+                        <div class="relative inline-block w-12 align-middle select-none transition duration-200 ease-in">
+                            <input type="checkbox" id="p-otherPets" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer transition-transform"/>
+                            <label for="p-otherPets" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                        </div>
+                    </div>
+                    <hr class="border-gray-200">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2 text-gray-700 font-medium">
+                            <i class="ph-fill ph-mask-sad text-xl text-gray-400"></i> Alguém tem alergia?
+                        </div>
+                        <div class="relative inline-block w-12 align-middle select-none transition duration-200 ease-in">
+                            <input type="checkbox" id="p-allergy" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer transition-transform"/>
+                            <label for="p-allergy" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                        </div>
+                    </div>
+                </div>
 
-        <label class="font-semibold text-gray-700">Já possui outro pet?</label>
-        <select id="p-otherPets" class="mb-6 p-3 border border-gray-200 rounded-xl w-full bg-gray-50">
-            <option value="">Não</option>
-            <option value="sim">Sim</option>
-        </select>
+                <div>
+                    <label class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3 block">Sua experiência com pets</label>
+                    <select id="p-experience" class="w-full p-3 border-2 border-gray-100 rounded-xl bg-white text-gray-700 font-medium focus:outline-none focus:border-green-500">
+                        <option value="iniciante">Primeira viagem (Iniciante)</option>
+                        <option value="intermediario" selected>Já tive pets (Intermediário)</option>
+                        <option value="experiente">Sou expert (Experiente)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
 
-        <button onclick="saveProfile()" class="bg-orange-500 text-white w-full py-4 rounded-xl font-bold shadow-lg shadow-orange-200 active:scale-95 transition-transform mb-8">
-            Continuar
-        </button>
+        <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-white via-white/90 to-transparent z-20">
+            <button onclick="saveProfile()" class="w-full bg-orange-500 text-white py-4 rounded-xl font-bold shadow-lg shadow-orange-200 active:scale-95 transition-transform flex items-center justify-center gap-2">
+                Encontrar meu match <i class="ph-bold ph-arrow-right"></i>
+            </button>
+        </div>
     </div>
 
     <div id="app" class="hidden relative w-full max-w-md h-full sm:h-[85vh] sm:rounded-3xl bg-white shadow-2xl flex flex-col overflow-hidden sm:border sm:border-gray-200">
@@ -584,6 +706,17 @@
 
         // --- SISTEMA DE PERFIL DO USUÁRIO ---
 
+        // Utilitários para ler/escrever Radio Buttons e Checkboxes
+        function getRadioVal(name) {
+            const el = document.querySelector(`input[name="${name}"]:checked`);
+            return el ? el.value : "";
+        }
+
+        function setRadioVal(name, value) {
+            const el = document.querySelector(`input[name="${name}"][value="${value}"]`);
+            if (el) el.checked = true;
+        }
+
         function openUserSettings() {
             const email = localStorage.getItem('currentUser') || 'visitante@adotaai.com';
             document.getElementById('profile-user-email').textContent = email;
@@ -604,44 +737,50 @@
 
         function openProfileEdit() {
             if (userProfile) {
-                document.getElementById('p-housing').value = userProfile.housing || "";
-                document.getElementById('p-activity').value = userProfile.activity || "";
+                setRadioVal('p-housing', userProfile.housing || "casa");
+                setRadioVal('p-activity', userProfile.activity || "moderado");
+                setRadioVal('p-species', userProfile.species || "");
+                setRadioVal('p-size', userProfile.size || "");
+                
                 document.getElementById('p-age').value = userProfile.age || "";
                 document.getElementById('p-temperament').value = userProfile.temperament || "";
-                document.getElementById('p-routine').value = userProfile.routine || "";
-                document.getElementById('p-experience').value = userProfile.experience || "";
-                document.getElementById('p-species').value = userProfile.species || "";
-                document.getElementById('p-size').value = userProfile.size || "";
-                document.getElementById('p-allergy').value = userProfile.allergy || "";
-                document.getElementById('p-kids').value = userProfile.kids || "";
-                document.getElementById('p-otherPets').value = userProfile.otherPets || "";
+                document.getElementById('p-routine').value = userProfile.routine || "fica_em_casa";
+                document.getElementById('p-experience').value = userProfile.experience || "intermediario";
+                
+                document.getElementById('p-allergy').checked = (userProfile.allergy === "sim");
+                document.getElementById('p-kids').checked = (userProfile.kids === "sim");
+                document.getElementById('p-otherPets').checked = (userProfile.otherPets === "sim");
             }
             
             document.getElementById('filter-menu').classList.add('hidden');
             document.getElementById('filter-icon').classList.replace('ph-caret-up', 'ph-caret-down');
             document.getElementById('app').classList.add('hidden');
             document.getElementById('view-profile').classList.remove('hidden');
+            document.getElementById('view-profile').classList.add('flex'); // Necessário para o novo layout
         }
 
         function saveProfile() {
             const profile = {
-                housing: document.getElementById('p-housing').value,
-                routine: document.getElementById('p-routine').value,
-                experience: document.getElementById('p-experience').value,
-                species: document.getElementById('p-species').value,
-                size: document.getElementById('p-size').value,
-                activity: document.getElementById('p-activity').value,
+                housing: getRadioVal('p-housing'),
+                activity: getRadioVal('p-activity'),
+                species: getRadioVal('p-species'),
+                size: getRadioVal('p-size'),
+                
                 age: document.getElementById('p-age').value,
                 temperament: document.getElementById('p-temperament').value,
-                allergy: document.getElementById('p-allergy').value,
-                kids: document.getElementById('p-kids').value,
-                otherPets: document.getElementById('p-otherPets').value
+                routine: document.getElementById('p-routine').value,
+                experience: document.getElementById('p-experience').value,
+                
+                allergy: document.getElementById('p-allergy').checked ? "sim" : "não",
+                kids: document.getElementById('p-kids').checked ? "sim" : "não",
+                otherPets: document.getElementById('p-otherPets').checked ? "sim" : "não"
             };
 
             localStorage.setItem('profile', JSON.stringify(profile));
             userProfile = profile;
 
             document.getElementById('view-profile').classList.add('hidden');
+            document.getElementById('view-profile').classList.remove('flex');
             document.getElementById('app').classList.remove('hidden');
             applySmartFilters();
         }
